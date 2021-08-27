@@ -1,0 +1,108 @@
+.level2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.level2-left {
+    background: url('../img/main_level2_left.jpg') center top no-repeat;
+    margin-right: 30px;
+    background-size: cover;
+    width: calc(25% - 15px);
+    min-width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.amount-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.amount-container::before {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('../img/main_level2_line.png');
+    top: -50px;
+}
+
+.amount-container>.amount-num {
+    font-family: Arial, sans-serif;
+    /* font-size: 58px; */
+    font-size: 50px;
+    line-height: 1;
+}
+
+.show-text-container {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    background-image: url('../img/main_level_2_jian.png');
+    background-repeat: no-repeat;
+    display: flex;
+    background-position: center center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.button-container {
+    margin-top: 60px;
+}
+
+.button-item {
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    position: relative;
+    margin: 10px 0 20px;
+    cursor: pointer;
+}
+
+.level2-right {
+    display: flex;
+    flex-grow: 1;
+}
+
+.img-item {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-item>img {
+    width: 100%;
+    height: 100%;
+}
+
+.level2-masker-wp {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    padding: 50px 60px 0;
+    box-sizing: border-box;
+    /* transition: all 0.3s linear 0s; */
+}
+
+.level2-masker-wp p {
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.level2-masker-wp p:hover {
+    cursor: pointer;
+}

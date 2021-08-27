@@ -1,0 +1,292 @@
+body{
+    /* background-color: black; */
+    user-select: none;
+}
+
+/* header-container可视区域开始 */
+.header-container{
+    width: 100%;
+    background-color: rgba(25,25,25,.6);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+.header-show-container{
+    padding: 0 20px;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    font-size: 16px;
+    z-index: 3;
+}
+
+/* logo区域 */
+.header-logo{
+    min-width: 140px;
+    width: 230px;
+    height: 48px;
+}
+.header-logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* nav区域 */
+.header-nav{
+    display: flex;
+    width: 848px;
+    max-width: 848px;
+    min-width: 750px;
+    height: 48px;
+    cursor: pointer;
+}
+.header-nav span{
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    display: flex;
+    height: 100%;
+}
+.header-nav span:first-of-type:hover{
+    color: #9d8540;
+}
+.header-nav .on.header-nav-item::before{
+    display: block;
+}
+.header-nav .on.header-nav-item{
+    color: #9d8540;
+}
+.header-nav span:not(:nth-of-type(1))::before{
+    content: '';
+    border: 10px solid;
+    border-color: transparent transparent #9d8540;
+    position: absolute;
+    opacity: 0.4;
+    bottom: 0px;
+    transform: translateX(calc(50% - 10px));
+    display: none;
+}
+/* user区域 */
+.header-user{
+    width: 200px;
+    height: 48px;
+}
+.header-user span{
+    font-weight: 200;
+}
+.header-user div:hover i{
+    color: #9d8540;
+}
+.header-user>div{
+    min-width: 40px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+.header-user>div:last-of-type{
+    height: 38px;
+}
+.header-user>div>div{
+    position: absolute;
+    top: 40px;
+    border: 2px solid #fff;
+    text-align: center;
+    border-radius: 5px;
+    opacity: 0;
+    top: 45px;
+}
+.header-user .header-user-sreach-masker{
+    right: 30px;
+    width: 220px;
+    height: 30px;
+    background-color: #fff;
+    top: 65px;
+    border: none;
+}
+.header-user .header-user-sreach-masker input{
+    width: 100%;
+    height: 30px;
+    padding: 0 30px 0 10px;
+    outline: none;
+    border: 1px solid #999;
+}
+.header-user .header-user-sreach-masker i{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    color: #999;
+    transform: translateY(10%);
+}
+.header-user .header-user-sreach-masker.active{
+    opacity: 1;
+    transition: opacity .3s;
+}
+.header-user>div:not(.user):hover div{
+    opacity: 1;
+    transition: opacity .3s linear;
+}
+.header-user>div>div span:not(:last-of-type){
+    border-bottom: 2px solid rgba(244,244,244,.8);
+}
+.header-user>div>div span{
+    display: block;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+}
+.header-user>div>div span:hover{
+    color: #9d8540;
+}
+.header-user-nav{
+    width: 26px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    height: 38px;
+}
+.header-user-nav i{
+    font-size: 20px;
+}
+/* ipt区域 */
+
+
+
+/* header-container可视区域结束 */
+
+/* navigator-masker-container隐藏区域开始 */
+.navigator-masker-container{
+    position: absolute;
+    background-image: url('../img/header/header_masker_bg.png');
+    width: 100%;
+    height: 0px;
+    /* transition: height .1s; */
+}
+.navigator-masker-container.active{
+    transition: height .1s linear;
+    height: 48px;
+}
+.navigator-masker-container .nav-list-masker-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 15px;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-50%);
+}
+.navigator-masker-container .nav-list-masker-container.show{
+    opacity: 1;
+    transition: opacity .3s linear;
+    z-index: 10;
+}
+.navigator-masker-container .nav-list-masker-container span{
+    height: 0;
+    align-items: center;
+    margin-right: 23px;
+    padding-right: 30px;
+    display: flex;
+    flex: 0 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+.navigator-masker-container .nav-list-masker-container span:hover{
+    color: #9d8540;
+}
+.navigator-masker-container .nav-list-masker-container.show span{
+    height: 100%;
+}
+.navigator-masker-container .nav-list-masker-container span:not(:last-of-type){
+    background-image: url('../img/header/item_before.png');
+    background-repeat: no-repeat;
+    background-position: right 60%;
+    vertical-align: -2px;
+}
+/* 隐藏区域结束 */
+
+
+
+/* 遮罩层开始 */
+.menu-masker-container{
+    width: 0;
+    height: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../img/header/masker_bg.jpg');
+    z-index: 2;
+    position: fixed;
+    padding-top: 150px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.menu-masker-container.active{
+    transition: .3s linear;
+}
+.menu-masker-container#menu-masker-selector{
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+}
+.menu-masker-container.active .menu-container-item,
+.menu-masker-container.active .menu-container-item h1,
+.menu-masker-container.active .menu-container-item span{
+    display: block;
+}
+.menu-container-item,
+.menu-container-item h1,
+.menu-container-item span{
+    display: none;
+}
+
+.menu-masker-container .menu-container{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    text-align: center;
+}
+.menu-masker-container .menu-container h1{
+    padding-bottom: 26px;
+    margin-bottom: 12px;
+    font-size: 26px;
+    cursor: pointer;
+    background-image: url('../img/header/full_page_arrow.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.menu-masker-container .menu-container span{
+    font-size: 16px;
+    padding: 4px 0;
+    color: #eaa1a1;
+    cursor: pointer;
+}
+.menu-masker-container .menu-container span:hover{
+    color: #fff;
+}
+.menu-masker-container .menu-container .menu-container-item{
+    display: flex;
+    flex-direction: column;
+}
+.menu-masker-container .menu-container-close{
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/header/full_page_close.png');
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-size: cover;
+    background-position: center;
+    transition: 1s linear;
+    cursor: pointer;
+}
+.menu-masker-container .menu-container-close:hover{
+    transform: rotate(180deg);
+}
+/* 遮罩层结束 */
